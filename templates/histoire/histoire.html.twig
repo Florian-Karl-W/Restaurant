@@ -1,0 +1,67 @@
+{% extends 'layout.html.twig' %}
+{% block JsEnfants %}
+    <script>
+        function toggle_visibility(id) {
+            let e = document.getElementById(id);
+            if(e.style.display == 'block')
+                e.style.display = 'none';
+            else
+                e.style.display = 'block';
+        }
+    </script>
+{% endblock %}
+{% block main %}
+      <div>    
+        <hr class="barre">
+        <div class="rest_covid">
+          <h1>Mention Covid-19</h1>
+        </div>
+          <marquee direction="left" scrollamount="9" class="texte_defilant">
+            <i>Suite à la crise que nous connaissons actuellement, notre établissement se voit contraint d'appliquer les réformes mise en place par le gouvernement et garder ces portes fermés à la clientèle . Pour pallier à cette contrainte, nous avons décidés de mettre en place un service de <span style="color: #AA843B;">click & collect</span> afin de conserver un minimum d'activité pour nos chères clients.</i>
+          </marquee>
+        <hr class="barre1">
+        <div class="rest_title">
+            <h1>Le Restaurant</h1>
+        </div>
+        <div class="rest_story">
+            <p><i>Ouvert depuis 52 ans, notre restaurant <i>À La Baguette</i> est fier d'avoir pu permettre à ses clients de pouvoir venir se restaurer et profiter d'un service de qualité jusqu'à maintenant, service que nous nous efforçons de fournir.<div id="foo" style="display: none;"><P> 
+            En espérant vous comptez parmis nos fidèles clients, nous vous prions de passer une agréable visite sur notre site internet tout récent.</i><br><br><br>
+            M Dupont,</p></div>  <div class="more_about" style="text-align: center;"><a onclick="toggle_visibility('foo')" class="show_text" style="color: #AA843B; font-size: 20px; cursor: pointer;">En savoir plus...</div>
+            </p>
+        </div>
+       
+        <hr class="barre">
+        <div class="derouleur_image">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="{{ asset('assets/images/photo1.jpg') }}" class="d-block w-100" alt="La salle principal du restaurant">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{ asset('assets/images/photo2.jpg') }}" class="d-block w-100" alt="Photo de la Tour Eiffel prise depuis le Trocadéro">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{ asset('assets/images/photo3.jpg') }}" class="d-block w-100" alt="Photo d'un des plats du restaurant">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{ asset('assets/images/photo4.jpg') }}" class="d-block w-100" alt="Photo de l'équipe du restaurant prise dans les cuisines">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+        </div>
+      </div> 
+      {% endblock %}

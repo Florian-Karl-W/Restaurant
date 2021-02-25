@@ -1,0 +1,13 @@
+/*----- FORM STYLIZATION -----*/
+
+    #reservation {
+        margin: 0 30%;
+    }
+
+    #reservation_Submit {
+        margin-top: 15px;
+        margin-left: 40%;
+        width: 25%;
+        background-color: #AA843B;
+        border: #AA843B;
+    }

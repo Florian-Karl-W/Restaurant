@@ -1,0 +1,92 @@
+{% extends 'layout.html.twig' %}
+{% form_theme reservationForm 'bootstrap_4_layout.html.twig' %}
+
+{#----- RAJOUT DU CSS ET JS -----#}
+{% block CssEnfants %}
+<link rel="stylesheet" href="{{ asset('assets/css/table.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/reservationform.css') }}">
+{% endblock %}
+{% block ScriptEnfants %}
+<script src="{{ asset('assets/js/table.js') }}" defer></script>
+{% endblock %}
+
+{% block main %}
+
+    <h1>Formulaire de Réservation</h1>
+{{ form_start(reservationForm)}}
+
+{{ form_widget(reservationForm) }}
+
+    <h1>Sélectionnez votre table</h1>
+
+    <!-- SECONDE LIGNE DE TEXTE -->
+    <div class="second_line">
+        <span>Restaurant À La Baguette</span>
+    </div>
+    <!-- TABLEAU DES RÉSERVATIONS -->
+    <div class="room_div">
+        <span class="room_map">Plan de Salle</span>
+    </div>
+    <!-- LÉGENDE DU TABLEAU -->
+    <div class="liste_legende">
+        <span><img src="/assets/images/reservation/armchair-green-64.png" alt="chaise-verte">Table disponible</span>
+        <span><img src="/assets/images/reservation/armchair-blue-64.png" alt="chaise-bleue">Table sélectionnée</span>
+        <span><img src="/assets/images/reservation/armchair-red-64.png" alt="chaise-red">Table indisponible</span>
+    </div>
+    <div class="container">
+        <div class="row row_1">
+          <div class="col">
+            <div id="table_1">Table1</div>
+          </div>
+          <div class="col">
+            <div id="table_2">Table2</div>
+          </div>
+        </div>
+        <div class="row row_2">
+          <div class="col">
+            <div id="table_3">Table3</div>
+          </div>
+          <div class="col">
+            <div id="table_4">Table4</div>
+          </div>
+        </div>
+        <div class="row row_3">
+            <div class="col">
+                <div id="table_5">Table5</div>
+            </div>
+        </div>
+        <div class="row row_4">
+            <div class="col col-sm">
+                <div id="table_6">Table6</div>
+            </div>
+            <div class="col col-sm">
+                <div id="table_7">Table7</div>
+            </div>
+            <div class="col col-sm">
+                <div id="table_8">Table8</div>
+                <div id="table_9">Table9</div>
+            </div>
+            <div class="col col-sm">
+                <div id="table_10">Table10</div>
+            </div>
+        </div>
+        <div class="row row_5">
+            <div class="col">
+                <div id="table_11">Table11</div>
+            </div>
+            <div class="col">
+                <div id="table_12">Table12</div>
+            </div>
+            <div class="col">
+                <div id="table_13">Table13</div>
+            </div>
+            <div class="col">
+                <div id="table_14">Table14</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" id="reservation_Submit" name="reservation[Submit]" class="btn-primary btn" href="{{ path('dashboard') }}">Validez</button>
+    </div>
+{{ form_end(reservationForm) }}
+{% endblock %}

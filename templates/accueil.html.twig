@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+        
+        <link rel="stylesheet" href="{{ asset('/assets/css/accueil.css') }}">
+       
+
+        <link rel="icon" type="image/png" href="{{ asset('/assets/images/Logo_type2-01.png') }}" sizes="16x16"/>
+
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+        
+        <script src="{{ asset('/assets/js/accueil.js') }}" defer></script>
+        
+
+
+    </head>
+    <body>
+        <nav class="nav">
+            <div class="container">
+            <span class="open-slide">
+                <a href="{{ path('reservation') }}" onclick="openSlideMenu()">Réservation
+                </a>
+            </span>
+            </div>
+
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </div>
+
+            <ul class="nav-list">
+
+                <li class="nav-item">
+                <a href="{{ path('index') }}" class="nav-link">ACCUEIL</a>
+                </li>
+                
+                {% if is_granted('ROLE_ADMIN') %}
+                    <li class="nav-item">
+                        <a href="{{ path('dashboard') }}" class="nav-link">DASHBOARD</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ path('app_logout') }}" class="nav-link">LOGOUT</a>
+                    </li>
+                {% endif %}
+
+                <li class="nav-item">
+                <a href="{{ path('histoire') }}" class="nav-link">LE RESTAURANT</a>
+                </li>
+
+                 <li class="nav-item">
+                <a href="{{ path('menu') }}" class="nav-link">LA CARTE</a>
+                </li>
+
+                <li class="nav-item">
+                <a href="{{ path('reservation') }}" class="nav-link">RESERVATION</a>
+                </li>
+
+                <li class="nav-item">
+                <a href="{{ path('product') }}" class="nav-link">CLICK AND COLLECT</a>
+                </li>
+
+                <li class="nav-item">
+                <a href="{{ path('contact') }}" class="nav-link">CONTACT</a>
+                </li>
+
+                <li class="nav-item">
+                <a href="{{ path('mentionslegales') }}" class="nav-link">MENTIONS LEGALES</a>
+                </li>               
+            </ul>
+        </nav>
+
+        <main>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="img-box">
+                            <img src="{{ asset('assets/images/1.jpg') }}">
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="img-box">
+                            <img src="{{ asset('assets/images/Restaurant.jpg') }}">
+                            <div class="button">
+                            <button><a href="{{ path('histoire') }}">LE RESTAURANT</a></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="img-box">
+                            <img src="{{ asset('assets/images/menu.jpg')}}">
+
+                            <div class="button">
+                            <button><a href="{{ path('menu') }}">LA CARTE</a></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="img-box">
+                            <img src="{{ asset('assets/images/Reservation.jpg') }}">
+
+                            <div class="button">
+                            <button><a href="{{ path('reservation') }}">RESERVATION</a></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="img-box">
+                            <img src="{{ asset('assets/images/Wine.jpg')}}">
+
+                            <div class="button">
+                            <button><a href="{{ path('product') }}">CLICK AND COLLECT</a></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="img-box">
+                            <img src="{{ asset('assets/images/contact.jpg') }}">
+
+                            <div class="button">
+                            <button><a href="{{ path('contact') }}">CONTACT</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+            </div>
+            
+            <img src="{{ asset('assets/images/logo-main.png') }}" class="logo">
+            
+    </main>
+    </body>
+
+</html>

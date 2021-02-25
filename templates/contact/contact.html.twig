@@ -1,0 +1,36 @@
+{% extends 'layout.html.twig' %}
+
+{% block JsEnfants %}
+<script defer src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
+{% endblock %}
+{% block CssEnfants %}
+  <link rel="stylesheet" href="{{ asset('assets/css/contact.css') }}">
+{% endblock %}
+
+{% block main %}
+    <div class="conteneurContact">
+      <h1>Contact</h1>
+      <div class="contact">
+        <div class="horaire">
+          <p>Ouvert 5j/7</p>
+          <p>de 12h00 à 14h30</p>
+          <p>de 19h00 à 23h30</p>
+        </div>
+        <br>     
+        <div class="adresse">
+          <p>70 rue du Vertbois</p>
+          <p>75003 Paris</p>
+          <p>France</p>
+          <p>+33 1 49 79 86 54</p>
+          
+        </div>
+      </div>  
+      <a href="mailto:contact.alabaguette@gmail.com">contact.alabaguette@gmail.com</a>
+    </div>  
+
+
+ {% endblock %}
+
+{% block footer %}
+
+{% endblock %} 

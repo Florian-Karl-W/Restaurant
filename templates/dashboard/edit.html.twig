@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block main %}
+
+<header>
+{% include 'include/dashnav.html.twig' %}
+</header>
+
+   <h1 style="text-align:center">Modification d'une réservation</h1>
+
+<div class="d-flex justify-content-center">  
+<div class="col-sm-2 ">
+    {{ form(form, {'attr': {'novalidate':'novalidate'}}) }}
+</div>
+</div>
+{% endblock %}

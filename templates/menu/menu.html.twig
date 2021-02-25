@@ -1,0 +1,46 @@
+{% extends 'layout.html.twig' %}
+
+
+{% block JsEnfants %}
+
+<script defer src="{{ asset('assets/js/menu.js') }}"></script>
+
+{% endblock %}
+{% block main %}
+<div class="slideshow-container">
+
+        <div class="mySlides fade">
+          
+          <img src="{{ asset('assets/images/image1.jpg') }}" style="width:100%">
+          
+        </div>
+        
+        <div class="mySlides fade">
+          
+          <img src="{{ asset('assets/images/image2.jpg') }}" style="width:100%">
+          
+        </div>
+        
+        <div class="mySlides fade">
+          
+          <img src="{{ asset('assets/images/image3.jpg') }}" style="width:100%">
+          
+        </div>          
+               
+        <div class="dotplacement" style="text-align:center">
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+    </div>
+  </div>
+    
+    <h1>LA CARTE</h1>
+
+    <div class="carte">
+      <img src="{{ asset('assets/images/Web_1920_1.png') }}" alt="carte/menu" style="width: 99%; height: auto">
+    </div>  
+
+    <div class="menu">
+      <a href="{{ asset('assets/images/Web_1920_1.png') }}" download="Carte"><span>Télécharger le menu</span></a>
+    </div>
+ {% endblock %}

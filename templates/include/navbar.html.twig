@@ -1,0 +1,65 @@
+            <nav class="nav">
+                <div class="conteneur">
+                        <div class="divAjustement">
+                            <span class="open-slide">
+                                <a href="{{ path('reservation') }}">Reservation</a>
+                            </span>
+                        </div>
+                    
+                        <!-- Mise en place logo -->
+                        {# <div class="divAjustement"> #}
+                            <div class="Logo">
+                                <a href="{{ path('index') }}"><img src="{{ asset('assets/images/Logo-type1.png') }}" alt="Logo du restaurant A la baguette"></a>      
+                            </div>
+                        {# </div> #}
+                    <!-- Fin Logo -->
+                    
+                    <div class="divAjustement">
+                        <div class="menu-toggle">
+                            <i class="fas fa-bars"></i>
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                    
+                    <ul class="nav-list">
+                        
+                        <li class="nav-item">
+                            <a href="{{ path('index') }}" class="nav-link">ACCUEIL</a>
+                        </li>
+
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <li class="nav-item">
+                                <a href="{{ path('dashboard') }}" class="nav-link">DASHBOARD</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ path('app_logout') }}" class="nav-link">LOGOUT</a>
+                            </li>
+                        {% endif %}
+                        
+                        <li class="nav-item">
+                            <a href="{{ path('histoire') }}" class="nav-link">LE RESTAURANT</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ path('menu') }}" class="nav-link">La Carte</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="{{ path('reservation') }}" class="nav-link">RESERVATION</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="{{ path('product') }}" class="nav-link">CLICK AND COLLECT</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="{{ path('contact') }}" class="nav-link">CONTACT</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="{{ path('mentionslegales') }}" class="nav-link">MENTIONS LEGALES</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </nav>

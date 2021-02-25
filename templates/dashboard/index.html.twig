@@ -1,0 +1,41 @@
+{% extends 'layout.html.twig' %}
+
+{% block main %}
+
+<header>
+{% include 'include/dashnav.html.twig' %}
+</header>
+
+
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prénom</th>
+      <th scope="col">Téléphone</th>
+      <th scope="col">Nombre de personnes</th>
+      <th scope="col">Date de réservation</th>
+      <th scope="col">Allergies</th>
+      <th scope="col">Table sélectionnée</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for reservation in reservations %}
+        <tr>
+        <th scope="row">{{ reservation.id }}</th>
+        <td>{{ reservation.firstname }}</td>
+        <td>{{ reservation.lastname }}</td>
+        <td>{{ reservation.phone }}</td>
+        <td>{{ reservation.nbperson }}</td>
+        <td>{{ reservation.date|format_datetime(locale='fr')}}</td>
+        <td>{{ reservation.allergies }}</td>
+        <td>{{ reservation.numTable }}</td>
+        <td><a href="{{ path('dashboard-edit', {id : reservation.id}) }}" type="button" class="btn btn-info">Modifier</a></td>
+            <td><a href="{{ path('dashboard-delete', {id : reservation.id}) }}" type="button" class="btn btn-warning">Supprimer</a></td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

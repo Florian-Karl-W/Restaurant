@@ -1,0 +1,14 @@
+{% extends 'layout.html.twig' %}
+
+{% block main %}
+
+ <h1 style="text-align:center">Modification/suppression d'un produit</h1>
+
+<header>
+{% include 'include/dashnav.html.twig' %}
+</header>
+
+{{ form(productccForm, {'attr': {'novalidate':'novalidate'}}) }}
+
+
+{% endblock %}
